@@ -1,7 +1,23 @@
 /*------------------------------------*\
   #FONTS
 \*------------------------------------*/
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 200;
+    src: url("../fonts/ClearSans-Light-webfont.woff") format("woff");
+}
 
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 400;
+    src: url("../fonts/ClearSans-Medium-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 600;
+    src: url("../fonts/ClearSans-Regular-webfont") format("woff");
+}
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -13,12 +29,17 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "Clear Sans", Helvetica, arial, sans-serif;
+    font-weight: 200;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to bottom right, #0A257D 0%,#061649 100%);
+    background-attachment: fixed;
+    color: white;
+    z-index: 1;
 }
 
 *,
@@ -205,7 +226,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 71 * 18px = 1278px */
 }
 
 /*
@@ -250,9 +271,9 @@ a:focus {
     flex-wrap: wrap;
 }
 
-    .o-layout__item {
-        width: 100%;
-    }
+.o-layout__item {
+    width: 100%;
+}
 
 /* gutter modifiers, these affect o-layout__item too */
 
@@ -367,6 +388,116 @@ a:focus {
   #COMPONENTS
 \*------------------------------------*/
 
+/*
+    Components: logo
+    ---
+
+*/
+.c-logo {
+  height: 32px;
+}
+
+/*
+    Components: nav
+    ---
+*/
+.c-nav {
+  line-height: 48px;
+  letter-spacing: 1px;
+}
+
+.c-nav__link {
+  color: white !important;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.c-nav__link:hover {
+  color: #DBEDFF !important;
+  text-shadow: 0 0 15px #DBEDFF;
+}
+
+@media (min-width: 992px) {
+  .c-nav__list {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  .c-nav__link {
+      color: white !important;
+      padding: 8px 16px;
+  }
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+@media (min-width: 992px) {
+  .c-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Big cta button with
+*/
+
+.c-link-cta {
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: white !important;
+    line-height: 16px;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 19px 30px;
+    box-shadow: 0 0 10px rgba(17, 149, 255, 0.3);
+    border: 1px solid rgba(142, 199, 255, 0.2);
+    letter-spacing: 1px;
+    transition: 0.5s;
+    background-image: linear-gradient(to right, #033AA7 0%, #0053FF 51% ,#0053FB 100%);
+    background-size: 200% auto;
+}
+
+.c-link-cta:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+/*
+    Component: figcaption
+    ---
+    caption figure right top of figure.
+*/
+.c-figure {
+  position: relative;
+  float: left;
+}
+
+.c-figure__img {
+}
+
+.c-figure__caption {
+  margin: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  max-width: 250px;
+  padding: 16px;
+  text-align: right;
+  border-right: 4px solid #0053FB;
+  color: #474D59;
+  background-color: white;
+  float: left;
+}
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
